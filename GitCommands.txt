@@ -13,12 +13,13 @@ git commit -a -m"комментарий"					- Снимок состояния проекта (коммит)
 								- ключ -m"" massege - комментарий
 git checkout -- имя_файла					- Откатить файл до состояния, которое находится в репозитории
 git log								- История коммитов
-git log --pretty=format:"%h - %an, %ar : %s"			- %h короткий код коммита
-								- %an автор
-								- %ar время когда был сдесан коммит
+git log --pretty=format:"%h - %an, %ar : %s"			- %h сокращённый хеш коммита
+								- %an имя автора
+								- %ar время когда был сделан коммит
 								- %s комментарий
 git log --since=2.weeks						- История коммитов за последние 2 недели 
 git log --since=2.weeks --pretty=format:"%h - %an, %ar : %s")	- Можно дополнять ключи
+git log --graph --all --decorate --oneline			- Выведет дерево коммитов
 git config --global core.editor "'C:\Program Files\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 								- Замена редактора для добавления комментариев, вместо редактора Vim
 git checkout -b название_новой_ветки				- Создание новой ветки и переключение на неё
