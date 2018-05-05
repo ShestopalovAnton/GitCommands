@@ -1,0 +1,40 @@
+shift+insert							- Вставить ctrl+v (в консоли Git-a)
+git init							- Создание репозитория (вызвать баш в папке, где хотим создать репозиторий)
+git config --global user.name "имя_пользователя"		- Имя пользователя репозитория
+git config --global user.email "email_пользователя"		- email пользователя репозитория
+git config --list						- Конфигурационные данные (.gitconfig лежит в C:\Users\имя_пользователя)
+.gitignore							- Игнорирование файлов (файл с расширением .gitignore, создается в корне репозитория) 
+git status							- Показывает текущий статус проекта
+git status --untracked-files=mode				- Показывает untracked файлы, которое еще не в Git-e (mode = all; normal; no)
+git add								- Добавить файлы под версионный контроль (индексирование файлов)
+git rm -cached имя_файла					- Удалить файл из под версионного контроля (отменить индексирование файла)
+git commit -a -m"комментарий"					- Снимок состояния проекта (коммит)
+								- ключ -a говорит, чтоб все файлы которые были изменены или были только что добавлены были помещены в индекс
+								- ключ -m"" massege - комментарий
+git checkout -- имя_файла					- Откатить файл до состояния, которое находится в репозитории
+git log								- История коммитов
+git log --pretty=format:"%h - %an, %ar : %s"			- %h короткий код коммита
+								- %an автор
+								- %ar время когда был сдесан коммит
+								- %s комментарий
+git log --since=2.weeks						- История коммитов за последние 2 недели 
+git log --since=2.weeks --pretty=format:"%h - %an, %ar : %s")	- Можно дополнять ключи
+git config --global core.editor "'C:\Program Files\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+								- Замена редактора для добавления комментариев, вместо редактора Vim
+git checkout -b название_новой_ветки				- Создание новой ветки и переключение на неё
+git branch название_новой_ветки					- Создание новой ветки
+git branch -v							- Показывает ветки, ключ -v показывает последний комментарий ветки
+git checkout название_ветки					- Переключение на другую ветку
+git merge имя_ветки						- Слияние веток (указываем имя ветки, которую будем мержить с текущей)
+git config --global merge.tool kdiff3				- Назначаем утилиту для мержа
+git mergetool							- Запуск утилиты для мержа (перед запуском скачать и установить kdiff3)
+git config --global mergetool.kdiff3.cmd '"C:\Program Files\KDiff3\kdiff3" $BASE $LOCAL $REMOTE -o $MERGED'
+								- Установка программы для мержа
+git remote add origin https://github.com/ShestopalovAnton/ArduinoTest.git
+								- Добавление нового репозитория "origin" - псевдоним
+git remote							- Посмотреть какие есть удаленные репозитории
+git push -u origin master					- Протолкнуть изменения на Github ветку master, ключ -u запоминает куда мы пушили
+git remote rename origin ArduinoTest				- Изменение имени удаленного репозитория (origin - старое имя; ArduinoTest - новое имя)
+git clone https://github.com/ShestopalovAnton/ArduinoTest.git	- Клонирование репозитория
+git fetch							- Забирает ветку мастер и сливает ее с локальной (изменяет папку .git)
+git pull							- Забрать изменение
