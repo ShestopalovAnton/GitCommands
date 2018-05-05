@@ -19,7 +19,8 @@ git log --pretty=format:"%h - %an, %ar : %s"			- %h сокращённый хеш коммита
 								- %s комментарий
 git log --since=2.weeks						- История коммитов за последние 2 недели 
 git log --since=2.weeks --pretty=format:"%h - %an, %ar : %s")	- Можно дополнять ключи
-git log --graph --all --decorate --oneline			- Выведет дерево коммитов
+git log --graph --all --decorate --oneline			- --graph показывает ASCII-граф истории ветвлений и слияний рядом с выводом лога
+
 git config --global core.editor "'C:\Program Files\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 								- Замена редактора для добавления комментариев, вместо редактора Vim
 git checkout -b название_новой_ветки				- Создание новой ветки и переключение на неё
@@ -31,6 +32,7 @@ git config --global merge.tool kdiff3				- Назначаем утилиту для мержа
 git mergetool							- Запуск утилиты для мержа (перед запуском скачать и установить kdiff3)
 git config --global mergetool.kdiff3.cmd '"C:\Program Files\KDiff3\kdiff3" $BASE $LOCAL $REMOTE -o $MERGED'
 								- Установка программы для мержа
+
 git remote add origin https://github.com/ShestopalovAnton/ArduinoTest.git
 								- Добавление нового репозитория "origin" - псевдоним
 git remote							- Посмотреть какие есть удаленные репозитории
