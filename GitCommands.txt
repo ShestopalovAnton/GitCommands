@@ -17,9 +17,11 @@ git log --pretty=format:"%h - %an, %ar : %s"			- %h сокращённый хеш коммита
 								- %an имя автора
 								- %ar время когда был сделан коммит
 								- %s комментарий
+								- %d — дополнения коммита («головы» веток или теги)
+								- %ad — дата коммита
 git log --since=2.weeks						- История коммитов за последние 2 недели 
 git log --since=2.weeks --pretty=format:"%h - %an, %ar : %s")	- Можно дополнять ключи
-git log --graph --all --decorate --oneline			- --graph показывает ASCII-граф истории ветвлений и слияний рядом с выводом лога
+git log --graph --all --decorate --oneline			- --graph отображает дерево коммитов в виде ASCII-графика
 
 git config --global core.editor "'C:\Program Files\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 								- Замена редактора для добавления комментариев, вместо редактора Vim
